@@ -1,10 +1,528 @@
+$ view /workspace
+view /workspace
+Here's the files and directories up to 2 levels deep in /workspace, excluding hidden items:
+/workspace/
+/workspace/CNAME
+/workspace/README.md
+/workspace/WhatsApp Image 2026-01-06 at 10.54.31 AM.jpeg
+/workspace/index.html
+2 hidden files/directories in this directory are excluded. You can use 'ls -la /workspace' to see them.
+$ view /workspace/index.html
+view /workspace/index.html
+Here's the result of running `cat -n` on /workspace/index.html:
+     1	<!DOCTYPE html>
+     2	<html lang="en">
+     3	<head>
+     4	    <meta charset="UTF-8">
+     5	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     6	    <title>BIM9_Connect - Smart Piping Solutions</title>
+     7	    
+     8	    <!-- Google Analytics -->
+     9	    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YV2KRNF49S"></script>
+    10	    <script>
+    11	        window.dataLayer = window.dataLayer || [];
+    12	        function gtag(){dataLayer.push(arguments);}
+    13	        gtag('js', new Date());
+    14	        gtag('config', 'G-YV2KRNF49S');
+    15	        
+    16	        // Track download button clicks
+    17	        function trackDownload() {
+    18	            gtag('event', 'download', {
+    19	                'event_category': 'Downloads',
+    20	                'event_label': 'BIM9_Connect_Setup.msi',
+    21	                'value': 1
+    22	            });
+    23	        }
+    24	    </script>
+    25	    <style>
+    26	        * {
+    27	            margin: 0;
+    28	            padding: 0;
+    29	            box-sizing: border-box;
+    30	        }
+    31	
+    32	        body {
+    33	            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    34	            line-height: 1.6;
+    35	            color: #333;
+    36	        }
+    37	
+    38	        header {
+    39	            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    40	            color: white;
+    41	            padding: 1rem 0;
+    42	            position: fixed;
+    43	            width: 100%;
+    44	            top: 0;
+    45	            z-index: 1000;
+    46	            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    47	        }
+    48	
+    49	        nav {
+    50	            max-width: 1200px;
+    51	            margin: 0 auto;
+    52	            display: flex;
+    53	            justify-content: space-between;
+    54	            align-items: center;
+    55	            padding: 0 2rem;
+    56	        }
+    57	
+    58	        .logo {
+    59	            font-size: 1.8rem;
+    60	            font-weight: bold;
+    61	        }
+    62	
+    63	        .nav-links {
+    64	            display: flex;
+    65	            gap: 2rem;
+    66	            list-style: none;
+    67	            align-items: center;
+    68	        }
+    69	
+    70	        .nav-links a {
+    71	            color: white;
+    72	            text-decoration: none;
+    73	            transition: opacity 0.3s;
+    74	        }
+    75	
+    76	        .nav-links a:hover {
+    77	            opacity: 0.8;
+    78	        }
+    79	
+    80	        .lang-switcher {
+    81	            background: rgba(255,255,255,0.2);
+    82	            padding: 0.5rem 1rem;
+    83	            border-radius: 20px;
+    84	            cursor: pointer;
+    85	            transition: background 0.3s;
+    86	        }
+    87	
+    88	        .lang-switcher:hover {
+    89	            background: rgba(255,255,255,0.3);
+    90	        }
+    91	
+    92	        .hero {
+    93	            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    94	            color: white;
+    95	            padding: 150px 2rem 100px;
+    96	            text-align: center;
+    97	        }
+    98	
+    99	        .hero h1 {
+   100	            font-size: 3rem;
+   101	            margin-bottom: 1rem;
+   102	            animation: fadeInUp 1s;
+   103	        }
+   104	
+   105	        .hero p {
+   106	            font-size: 1.3rem;
+   107	            margin-bottom: 2rem;
+   108	            animation: fadeInUp 1s 0.2s backwards;
+   109	        }
+   110	
+   111	        .hero-buttons {
+   112	            display: flex;
+   113	            gap: 1rem;
+   114	            justify-content: center;
+   115	            flex-wrap: wrap;
+   116	            animation: fadeInUp 1s 0.4s backwards;
+   117	        }
+   118	
+   119	        .cta-button {
+   120	            background: white;
+   121	            color: #667eea;
+   122	            padding: 1rem 2.5rem;
+   123	            border: none;
+   124	            border-radius: 50px;
+   125	            font-size: 1.1rem;
+   126	            cursor: pointer;
+   127	            transition: transform 0.3s, box-shadow 0.3s;
+   128	            text-decoration: none;
+   129	            display: inline-block;
+   130	            font-weight: bold;
+   131	        }
+   132	
+   133	        .cta-button:hover {
+   134	            transform: translateY(-3px);
+   135	            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+   136	        }
+   137	
+   138	        .cta-button.download {
+   139	            background: #28a745;
+   140	            color: white;
+   141	        }
+   142	
+   143	        .cta-button.download:hover {
+   144	            background: #218838;
+   145	        }
+   146	
+   147	        .container {
+   148	            max-width: 1200px;
+   149	            margin: 0 auto;
+   150	            padding: 4rem 2rem;
+   151	        }
+   152	
+   153	        .section-title {
+   154	            text-align: center;
+   155	            font-size: 2.5rem;
+   156	            margin-bottom: 3rem;
+   157	            color: #667eea;
+   158	        }
+   159	
+   160	        .features {
+   161	            display: grid;
+   162	            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+   163	            gap: 2rem;
+   164	            margin-top: 3rem;
+   165	        }
+   166	
+   167	        .feature-card {
+   168	            background: white;
+   169	            padding: 2rem;
+   170	            border-radius: 15px;
+   171	            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+   172	            transition: transform 0.3s, box-shadow 0.3s;
+   173	        }
+   174	
+   175	        .feature-card:hover {
+   176	            transform: translateY(-10px);
+   177	            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+   178	        }
+   179	
+   180	        .feature-icon {
+   181	            font-size: 3rem;
+   182	            margin-bottom: 1rem;
+   183	        }
+   184	
+   185	        .feature-card h3 {
+   186	            color: #667eea;
+   187	            margin-bottom: 1rem;
+   188	        }
+   189	
+   190	        .about {
+   191	            background: #f8f9fa;
+   192	        }
+   193	
+   194	        .gallery {
+   195	            background: white;
+   196	        }
+   197	
+   198	        .gallery-grid {
+   199	            display: grid;
+   200	            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+   201	            gap: 2rem;
+   202	            margin-top: 3rem;
+   203	        }
+   204	
+   205	        .gallery-item {
+   206	            border-radius: 15px;
+   207	            overflow: hidden;
+   208	            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+   209	            transition: transform 0.3s;
+   210	        }
+   211	
+   212	        .gallery-item:hover {
+   213	            transform: scale(1.05);
+   214	        }
+   215	
+   216	        .gallery-item img {
+   217	            width: 100%;
+   218	            height: 250px;
+   219	            object-fit: cover;
+   220	            display: block;
+   221	        }
+   222	
+   223	        .gallery-item-content {
+   224	            padding: 1rem;
+   225	            background: white;
+   226	        }
+   227	
+   228	        .gallery-item-content h3 {
+   229	            color: #667eea;
+   230	            margin-bottom: 0.5rem;
+   231	        }
+   232	
+   233	        .video-section {
+   234	            background: #f8f9fa;
+   235	        }
+   236	
+   237	        .video-container {
+   238	            max-width: 900px;
+   239	            margin: 0 auto;
+   240	            margin-top: 3rem;
+   241	        }
+   242	
+   243	        .video-wrapper {
+   244	            position: relative;
+   245	            padding-bottom: 56.25%;
+   246	            height: 0;
+   247	            overflow: hidden;
+   248	            border-radius: 15px;
+   249	            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+   250	        }
+   251	
+   252	        .video-wrapper iframe {
+   253	            position: absolute;
+   254	            top: 0;
+   255	            left: 0;
+   256	            width: 100%;
+   257	            height: 100%;
+   258	        }
+   259	
+   260	        .video-grid {
+   261	            display: grid;
+   262	            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+   263	            gap: 2rem;
+   264	            margin-top: 3rem;
+   265	        }
+   266	
+   267	        .download-section {
+   268	            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+   269	            color: white;
+   270	            text-align: center;
+   271	            padding: 4rem 2rem;
+   272	        }
+   273	
+   274	        .download-section h2 {
+   275	            font-size: 2.5rem;
+   276	            margin-bottom: 1rem;
+   277	        }
+   278	
+   279	        .download-section p {
+   280	            font-size: 1.2rem;
+   281	            margin-bottom: 2rem;
+   282	            opacity: 0.9;
+   283	        }
+   284	
+   285	        .download-button {
+   286	            background: white;
+   287	            color: #667eea;
+   288	            padding: 1.5rem 3rem;
+   289	            border: none;
+   290	            border-radius: 50px;
+   291	            font-size: 1.3rem;
+   292	            font-weight: bold;
+   293	            cursor: pointer;
+   294	            transition: transform 0.3s, box-shadow 0.3s;
+   295	            text-decoration: none;
+   296	            display: inline-flex;
+   297	            align-items: center;
+   298	            gap: 1rem;
+   299	        }
+   300	
+   301	        .download-button:hover {
+   302	            transform: translateY(-5px);
+   303	            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+   304	        }
+   305	
+   306	        .download-icon {
+   307	            font-size: 1.5rem;
+   308	        }
+   309	
+   310	        .contact-form {
+   311	            max-width: 600px;
+   312	            margin: 0 auto;
+   313	            background: white;
+   314	            padding: 2rem;
+   315	            border-radius: 15px;
+   316	            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+   317	        }
+   318	
+   319	        .form-group {
+   320	            margin-bottom: 1.5rem;
+   321	        }
+   322	
+   323	        .form-group label {
+   324	            display: block;
+   325	            margin-bottom: 0.5rem;
+   326	            color: #667eea;
+   327	            font-weight: bold;
+   328	        }
+   329	
+   330	        .form-group input,
+   331	        .form-group textarea {
+   332	            width: 100%;
+   333	            padding: 0.8rem;
+   334	            border: 2px solid #e0e0e0;
+   335	            border-radius: 8px;
+   336	            font-size: 1rem;
+   337	            transition: border-color 0.3s;
+   338	        }
+   339	
+   340	        .form-group input:focus,
+   341	        .form-group textarea:focus {
+   342	            outline: none;
+   343	            border-color: #667eea;
+   344	        }
+   345	
+   346	        .form-group textarea {
+   347	            resize: vertical;
+   348	            min-height: 150px;
+   349	        }
+   350	
+   351	        .submit-btn {
+   352	            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+   353	            color: white;
+   354	            padding: 1rem 2rem;
+   355	            border: none;
+   356	            border-radius: 50px;
+   357	            font-size: 1.1rem;
+   358	            cursor: pointer;
+   359	            width: 100%;
+   360	            transition: transform 0.3s;
+   361	        }
+   362	
+   363	        .submit-btn:hover {
+   364	            transform: scale(1.05);
+   365	        }
+   366	
+   367	        footer {
+   368	            background: #2c3e50;
+   369	            color: white;
+   370	            text-align: center;
+   371	            padding: 2rem;
+   372	        }
+   373	
+   374	        .stats-bar {
+   375	            background: #34495e;
+   376	            color: white;
+   377	            padding: 1rem;
+   378	            text-align: center;
+   379	            display: flex;
+   380	            justify-content: center;
+   381	            gap: 3rem;
+   382	            flex-wrap: wrap;
+   383	        }
+   384	
+   385	        .stat-item {
+   386	            display: flex;
+   387	            flex-direction: column;
+   388	            align-items: center;
+   389	        }
+   390	
+   391	        .stat-number {
+   392	            font-size: 2rem;
+   393	            font-weight: bold;
+   394	            color: #667eea;
+   395	        }
+   396	
+   397	        .stat-label {
+   398	            font-size: 0.9rem;
+   399	            opacity: 0.8;
+   400	            margin-top: 0.5rem;
+   401	        }
+   402	
+   403	        @keyframes fadeInUp {
+   404	            from {
+   405	                opacity: 0;
+   406	                transform: translateY(30px);
+   407	            }
+   408	            to {
+   409	                opacity: 1;
+   410	                transform: translateY(0);
+   411	            }
+   412	        }
+   413	
+   414	        .hidden {
+   415	            display: none;
+   416	        }
+   417	
+   418	        @media (max-width: 768px) {
+   419	            .hero h1 {
+   420	                font-size: 2rem;
+   421	            }
+   422	
+   423	            .hero p {
+   424	                font-size: 1rem;
+   425	            }
+   426	
+   427	            .nav-links {
+   428	                gap: 1rem;
+   429	            }
+   430	
+   431	            .nav-links a:not(.lang-switcher) {
+   432	                display: none;
+   433	            }
+   434	
+   435	            .hero-buttons {
+   436	                flex-direction: column;
+   437	                align-items: center;
+   438	            }
+   439	
+   440	            .cta-button {
+   441	                width: 100%;
+   442	                max-width: 300px;
+   443	            }
+   444	        }
+   445	    </style>
+   446	</head>
+   447	<body>
+   448	    <header>
+   449	        <nav>
+   450	            <div class="logo">BIM9_Connect</div>
+   451	            <ul class="nav-links">
+   452	                <li><a href="#home" class="nav-link" data-en="Home" data-vi="Trang Chủ">Home</a></li>
+   453	                <li><a href="#features" class="nav-link" data-en="Features" data-vi="Tính Năng">Features</a></li>
+   454	                <li><a href="#gallery" class="nav-link" data-en="Gallery" data-vi="Thư Viện">Gallery</a></li>
+   455	                <li><a href="#videos" class="nav-link" data-en="Videos" data-vi="Video">Videos</a></li>
+   456	                <li><a href="#about" class="nav-link" data-en="About" data-vi="Giới Thiệu">About</a></li>
+   457	                <li><a href="#contact" class="nav-link" data-en="Contact" data-vi="Liên Hệ">Contact</a></li>
+   458	                <li><a href="#" class="lang-switcher" onclick="toggleLanguage(event)">🌐 VI</a></li>
+   459	            </ul>
+   460	        </nav>
+   461	    </header>
+   462	
+   463	    <section id="home" class="hero">
+   464	        <h1 class="translate" data-en="BIM9_Connect" data-vi="BIM9_Connect">BIM9_Connect</h1>
+   465	        <p class="translate" data-en="Smart Piping Solutions for Modern Construction" data-vi="Giải pháp đường ống thông minh cho công trình hiện đại">Smart Piping Solutions for Modern Construction</p>
+   466	        <div class="hero-buttons">
+   467	            <a href="https://bim9-connect-purchase.bim9solution.workers.dev/purchase" class="cta-button translate" data-en="Purchase Now" data-vi="Mua Ngay">Purchase Now</a>
+   468	            <a href="#download" class="cta-button download translate" data-en="Download Free Trial" data-vi="Tải Bản Dùng Thử">Download Free Trial</a>
+   469	        </div>
+   470	    </section>
+   471	
+   472	    <section id="features">
+   473	        <div class="container">
+   474	            <h2 class="section-title translate" data-en="Key Features" data-vi="Tính Năng Nổi Bật">Key Features</h2>
+   475	            <div class="features">
+   476	                <div class="feature-card">
+   477	                    <div class="feature-icon">🔧</div>
+   478	                    <h3 class="translate" data-en="Precision Design" data-vi="Thiết Kế Chính Xác">Precision Design</h3>
+   479	                    <p class="translate" data-en="Utilize BIM technology for highly accurate piping system design, optimizing space and costs." data-vi="Sử dụng công nghệ BIM để thiết kế hệ thống đường ống với độ chính xác cao, tối ưu hóa không gian và chi phí.">Utilize BIM technology for highly accurate piping system design, optimizing space and costs.</p>
+   480	                </div>
+   481	                <div class="feature-card">
+   482	                    <div class="feature-icon">📊</div>
+   483	                    <h3 class="translate" data-en="Smart Management" data-vi="Quản Lý Thông Minh">Smart Management</h3>
+   484	                    <p class="translate" data-en="Monitor and manage entire piping systems with digital data, enabling efficient maintenance and operation." data-vi="Theo dõi và quản lý toàn bộ hệ thống đường ống với dữ liệu số hóa, giúp bảo trì và vận hành hiệu quả.">Monitor and manage entire piping systems with digital data, enabling efficient maintenance and operation.</p>
+   485	                </div>
+   486	                <div class="feature-card">
+   487	                    <div class="feature-icon">⚡</div>
+   488	                    <h3 class="translate" data-en="Rapid Installation" data-vi="Thi Công Nhanh Chóng">Rapid Installation</h3>
+   489	                    <p class="translate" data-en="Reduce construction time with optimized design solutions and advanced technology support." data-vi="Rút ngắn thời gian thi công nhờ phương án thiết kế tối ưu và hỗ trợ công nghệ tiên tiến.">Reduce construction time with optimized design solutions and advanced technology support.</p>
+   490	                </div>
+   491	                <div class="feature-card">
+   492	                    <div class="feature-icon">🛡️</div>
+   493	                    <h3 class="translate" data-en="Safety Assured" data-vi="An Toàn Đảm Bảo">Safety Assured</h3>
+   494	                    <p class="translate" data-en="Comply with international safety standards, ensuring stable and sustainable system operation." data-vi="Tuân thủ các tiêu chuẩn an toàn quốc tế, đảm bảo hệ thống hoạt động ổn định và bền vững.">Comply with international safety standards, ensuring stable and sustainable system operation.</p>
+   495	                </div>
+   496	                <div class="feature-card">
+   497	                    <div class="feature-icon">💰</div>
+   498	                    <h3 class="translate" data-en="Cost Savings" data-vi="Tiết Kiệm Chi Phí">Cost Savings</h3>
+   499	                    <p class="translate" data-en="Minimize material waste and time, delivering optimal economic efficiency for projects." data-vi="Giảm thiểu lãng phí vật liệu và thời gian, mang lại hiệu quả kinh tế tối ưu cho dự án.">Minimize material waste and time, delivering optimal economic efficiency for projects.</p>
+   500	                </div>
+   501	                <div class="feature-card">
+   502	                    <div class="feature-icon">🌍</div>
+   503	                    <h3 class="translate" data-en="Eco-Friendly" data-vi="Thân Thiện Môi Trường">Eco-Friendly</h3>
+   504	                    <p class="translate" data-en="Green solutions that protect the environment and promote sustainable development for the future." data-vi="Giải pháp xanh, bảo vệ môi trường và phát triển bền vững cho tương lai.">Green solutions that protect the environment and promote sustainable development for<response clipped><NOTE>Due to the max output limit, only part of this file has been shown to you. You should retry this tool after you have searched inside the file with `grep -n` in order to find the line numbers of what you are looking for.</NOTE>
+Shell
+$ cat /workspace/index.html
+cat /workspace/index.html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BIM9_Connect - Smart Piping Solutions</title>
-    
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-YV2KRNF49S"></script>
     <script>
@@ -12,7 +530,6 @@
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
         gtag('config', 'G-YV2KRNF49S');
-        
         // Track download button clicks
         function trackDownload() {
             gtag('event', 'download', {
@@ -28,13 +545,11 @@
             padding: 0;
             box-sizing: border-box;
         }
-
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: #333;
         }
-
         header {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
@@ -45,7 +560,6 @@
             z-index: 1000;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
-
         nav {
             max-width: 1200px;
             margin: 0 auto;
@@ -54,29 +568,24 @@
             align-items: center;
             padding: 0 2rem;
         }
-
         .logo {
             font-size: 1.8rem;
             font-weight: bold;
         }
-
         .nav-links {
             display: flex;
             gap: 2rem;
             list-style: none;
             align-items: center;
         }
-
         .nav-links a {
             color: white;
             text-decoration: none;
             transition: opacity 0.3s;
         }
-
         .nav-links a:hover {
             opacity: 0.8;
         }
-
         .lang-switcher {
             background: rgba(255,255,255,0.2);
             padding: 0.5rem 1rem;
@@ -84,30 +593,25 @@
             cursor: pointer;
             transition: background 0.3s;
         }
-
         .lang-switcher:hover {
             background: rgba(255,255,255,0.3);
         }
-
         .hero {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
             padding: 150px 2rem 100px;
             text-align: center;
         }
-
         .hero h1 {
             font-size: 3rem;
             margin-bottom: 1rem;
             animation: fadeInUp 1s;
         }
-
         .hero p {
             font-size: 1.3rem;
             margin-bottom: 2rem;
             animation: fadeInUp 1s 0.2s backwards;
         }
-
         .hero-buttons {
             display: flex;
             gap: 1rem;
@@ -115,7 +619,6 @@
             flex-wrap: wrap;
             animation: fadeInUp 1s 0.4s backwards;
         }
-
         .cta-button {
             background: white;
             color: #667eea;
@@ -129,41 +632,34 @@
             display: inline-block;
             font-weight: bold;
         }
-
         .cta-button:hover {
             transform: translateY(-3px);
             box-shadow: 0 10px 25px rgba(0,0,0,0.2);
         }
-
         .cta-button.download {
             background: #28a745;
             color: white;
         }
-
         .cta-button.download:hover {
             background: #218838;
         }
-
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 4rem 2rem;
         }
-
         .section-title {
             text-align: center;
             font-size: 2.5rem;
             margin-bottom: 3rem;
             color: #667eea;
         }
-
         .features {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
             margin-top: 3rem;
         }
-
         .feature-card {
             background: white;
             padding: 2rem;
@@ -171,75 +667,61 @@
             box-shadow: 0 5px 20px rgba(0,0,0,0.1);
             transition: transform 0.3s, box-shadow 0.3s;
         }
-
         .feature-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 15px 40px rgba(0,0,0,0.15);
         }
-
         .feature-icon {
             font-size: 3rem;
             margin-bottom: 1rem;
         }
-
         .feature-card h3 {
             color: #667eea;
             margin-bottom: 1rem;
         }
-
         .about {
             background: #f8f9fa;
         }
-
         .gallery {
             background: white;
         }
-
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
             margin-top: 3rem;
         }
-
         .gallery-item {
             border-radius: 15px;
             overflow: hidden;
             box-shadow: 0 5px 20px rgba(0,0,0,0.1);
             transition: transform 0.3s;
         }
-
         .gallery-item:hover {
             transform: scale(1.05);
         }
-
         .gallery-item img {
             width: 100%;
             height: 250px;
             object-fit: cover;
             display: block;
         }
-
         .gallery-item-content {
             padding: 1rem;
             background: white;
         }
-
         .gallery-item-content h3 {
             color: #667eea;
             margin-bottom: 0.5rem;
         }
-
         .video-section {
             background: #f8f9fa;
         }
-
         .video-container {
             max-width: 900px;
             margin: 0 auto;
             margin-top: 3rem;
         }
-
         .video-wrapper {
             position: relative;
             padding-bottom: 56.25%;
@@ -248,7 +730,6 @@
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.2);
         }
-
         .video-wrapper iframe {
             position: absolute;
             top: 0;
@@ -256,32 +737,27 @@
             width: 100%;
             height: 100%;
         }
-
         .video-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
             margin-top: 3rem;
         }
-
         .download-section {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
             text-align: center;
             padding: 4rem 2rem;
         }
-
         .download-section h2 {
             font-size: 2.5rem;
             margin-bottom: 1rem;
         }
-
         .download-section p {
             font-size: 1.2rem;
             margin-bottom: 2rem;
             opacity: 0.9;
         }
-
         .download-button {
             background: white;
             color: #667eea;
@@ -297,16 +773,13 @@
             align-items: center;
             gap: 1rem;
         }
-
         .download-button:hover {
             transform: translateY(-5px);
             box-shadow: 0 15px 40px rgba(0,0,0,0.3);
         }
-
         .download-icon {
             font-size: 1.5rem;
         }
-
         .contact-form {
             max-width: 600px;
             margin: 0 auto;
@@ -315,18 +788,15 @@
             border-radius: 15px;
             box-shadow: 0 5px 20px rgba(0,0,0,0.1);
         }
-
         .form-group {
             margin-bottom: 1.5rem;
         }
-
         .form-group label {
             display: block;
             margin-bottom: 0.5rem;
             color: #667eea;
             font-weight: bold;
         }
-
         .form-group input,
         .form-group textarea {
             width: 100%;
@@ -336,18 +806,15 @@
             font-size: 1rem;
             transition: border-color 0.3s;
         }
-
         .form-group input:focus,
         .form-group textarea:focus {
             outline: none;
             border-color: #667eea;
         }
-
         .form-group textarea {
             resize: vertical;
             min-height: 150px;
         }
-
         .submit-btn {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
@@ -359,18 +826,15 @@
             width: 100%;
             transition: transform 0.3s;
         }
-
         .submit-btn:hover {
             transform: scale(1.05);
         }
-
         footer {
             background: #2c3e50;
             color: white;
             text-align: center;
             padding: 2rem;
         }
-
         .stats-bar {
             background: #34495e;
             color: white;
@@ -381,25 +845,21 @@
             gap: 3rem;
             flex-wrap: wrap;
         }
-
         .stat-item {
             display: flex;
             flex-direction: column;
             align-items: center;
         }
-
         .stat-number {
             font-size: 2rem;
             font-weight: bold;
             color: #667eea;
         }
-
         .stat-label {
             font-size: 0.9rem;
             opacity: 0.8;
             margin-top: 0.5rem;
         }
-
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -410,33 +870,26 @@
                 transform: translateY(0);
             }
         }
-
         .hidden {
             display: none;
         }
-
         @media (max-width: 768px) {
             .hero h1 {
                 font-size: 2rem;
             }
-
             .hero p {
                 font-size: 1rem;
             }
-
             .nav-links {
                 gap: 1rem;
             }
-
             .nav-links a:not(.lang-switcher) {
                 display: none;
             }
-
             .hero-buttons {
                 flex-direction: column;
                 align-items: center;
             }
-
             .cta-button {
                 width: 100%;
                 max-width: 300px;
@@ -459,7 +912,6 @@
             </ul>
         </nav>
     </header>
-
     <section id="home" class="hero">
         <h1 class="translate" data-en="BIM9_Connect" data-vi="BIM9_Connect">BIM9_Connect</h1>
         <p class="translate" data-en="Smart Piping Solutions for Modern Construction" data-vi="Giải pháp đường ống thông minh cho công trình hiện đại">Smart Piping Solutions for Modern Construction</p>
@@ -468,7 +920,6 @@
             <a href="#download" class="cta-button download translate" data-en="Download Free Trial" data-vi="Tải Bản Dùng Thử">Download Free Trial</a>
         </div>
     </section>
-
     <section id="features">
         <div class="container">
             <h2 class="section-title translate" data-en="Key Features" data-vi="Tính Năng Nổi Bật">Key Features</h2>
@@ -506,7 +957,6 @@
             </div>
         </div>
     </section>
-
     <section id="gallery" class="gallery">
         <div class="container">
             <h2 class="section-title translate" data-en="Project Gallery" data-vi="Thư Viện Dự Án">Project Gallery</h2>
@@ -553,177 +1003,157 @@
                         <p class="translate" data-en="Integrated systems for intelligent buildings" data-vi="Hệ thống tích hợp cho tòa nhà thông minh">Integrated systems for intelligent buildings</p>
                     </div>
                 </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1531834685032-c34bf0d84c77?w=600&h=400&fit=crop" alt="HVAC Systems">
+                    <div class="gallery-item-content">
+                        <h3 class="translate" data-en="HVAC Integration" data-vi="Tích Hợp HVAC">HVAC Integration</h3>
+                        <p class="translate" data-en="Comprehensive heating, ventilation, and air conditioning solutions" data-vi="Giải pháp sưởi ấm, thông gió và điều hòa không khí toàn diện">Comprehensive heating, ventilation, and air conditioning solutions</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1565008447742-97f6f38c985c?w=600&h=400&fit=crop" alt="Pipeline Infrastructure">
+                    <div class="gallery-item-content">
+                        <h3 class="translate" data-en="Pipeline Infrastructure" data-vi="Hạ Tầng Đường Ống">Pipeline Infrastructure</h3>
+                        <p class="translate" data-en="Large-scale pipeline networks for commercial complexes" data-vi="Mạng lưới đường ống quy mô lớn cho khu phức hợp thương mại">Large-scale pipeline networks for commercial complexes</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1590247813693-5541d1c609fd?w=600&h=400&fit=crop" alt="CAD Design">
+                    <div class="gallery-item-content">
+                        <h3 class="translate" data-en="CAD Design" data-vi="Thiết Kế CAD">CAD Design</h3>
+                        <p class="translate" data-en="Precise computer-aided design for optimal layouts" data-vi="Thiết kế hỗ trợ máy tính chính xác cho bố cục tối ưu">Precise computer-aided design for optimal layouts</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=600&h=400&fit=crop" alt="Architectural Planning">
+                    <div class="gallery-item-content">
+                        <h3 class="translate" data-en="Architectural Planning" data-vi="Quy Hoạch Kiến Trúc">Architectural Planning</h3>
+                        <p class="translate" data-en="Strategic planning for modern infrastructure development" data-vi="Quy hoạch chiến lược cho phát triển hạ tầng hiện đại">Strategic planning for modern infrastructure development</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
-
     <section id="videos" class="video-section">
         <div class="container">
             <h2 class="section-title translate" data-en="Video Tutorials & Demos" data-vi="Video Hướng Dẫn & Giới Thiệu">Video Tutorials & Demos</h2>
-            
             <div class="video-container">
                 <h3 style="text-align: center; margin-bottom: 1.5rem; color: #667eea;" class="translate" data-en="Featured Video" data-vi="Video Nổi Bật">Featured Video</h3>
                 <div class="video-wrapper">
                     <iframe src="https://www.youtube.com/embed/6sB0jzgIq5Y" title="BIM9_Connect Introduction" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
             </div>
-
             <div class="video-grid">
-
-
                 <div class="gallery-item">
                     <div class="video-wrapper" style="padding-bottom: 56.25%;">
                         <iframe src="https://www.youtube.com/embed/H9-jNe9hKuE" title="Tutorial 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                     <div class="gallery-item-content">
                         <h3 class="translate" data-en="ExportCAD - Export multi sheets into one CAD file" data-vi="ExportCAD - Export multi sheets into one CAD file">ExportCAD - Export multi sheets into one CAD file</h3>
-                        
                     </div>
                 </div>
-
-
                 <div class="gallery-item">
                     <div class="video-wrapper" style="padding-bottom: 56.25%;">
                         <iframe src="https://www.youtube.com/embed/j3xr4g16mQ4" title="Tutorial 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                     <div class="gallery-item-content">
                         <h3 class="translate" data-en="Search Elements" data-vi="Search Elements">Search Elements</h3>
-                        
                     </div>
                 </div>
-
-                
-
-                
                 <div class="gallery-item">
                     <div class="video-wrapper" style="padding-bottom: 56.25%;">
                         <iframe src="https://www.youtube.com/embed/OgTnvDWnid0" title="Tutorial 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                     <div class="gallery-item-content">
                         <h3 class="translate" data-en="ParaConnect - Connect two selected parallel pipes" data-vi="ParaConnect - Connect two selected parallel pipes">ParaConnect - Connect two selected parallel pipes</h3>
-                        
                     </div>
                 </div>
-
-
                 <div class="gallery-item">
                     <div class="video-wrapper" style="padding-bottom: 56.25%;">
                         <iframe src="https://www.youtube.com/embed/0ZvDSGyE5Sw" title="Tutorial 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                     <div class="gallery-item-content">
                         <h3 class="translate" data-en="Delete and reconnect pipe with fittings" data-vi="Delete and reconnect pipe with fittings">Delete and reconnect pipe with fittings</h3>
-                        
                     </div>
                 </div>
-
-                
-                
                 <div class="gallery-item">
                     <div class="video-wrapper" style="padding-bottom: 56.25%;">
                         <iframe src="https://www.youtube.com/embed/NrFmdxjenMI" title="Tutorial 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                     <div class="gallery-item-content">
                         <h3 class="translate" data-en="PerpenConnect - Connect two selected perpendicular pipes with big difference elevation" data-vi="PerpenConnect - Connect two selected perpendicular pipes with big difference elevation">PerpenConnect - Connect two selected perpendicular pipes with big difference elevation</h3>
-                        
                     </div>
                 </div>
-                
                 <div class="gallery-item">
                     <div class="video-wrapper" style="padding-bottom: 56.25%;">
                         <iframe src="https://www.youtube.com/embed/uzHbc8VpVsM" title="Tutorial 3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                     <div class="gallery-item-content">
                         <h3 class="translate" data-en="Connect selected pipes by elbows at the 300mm distance" data-vi="Connect selected pipes by elbows at the 300mm distance">Connect selected pipes by elbows at the 300mm distance</h3>
-                       
                     </div>
                 </div>
-
-
-                
                 <div class="gallery-item">
                     <div class="video-wrapper" style="padding-bottom: 56.25%;">
                         <iframe src="https://www.youtube.com/embed/ovFT0Pg-AO0" title="Tutorial 3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                     <div class="gallery-item-content">
                         <h3 class="translate" data-en="Convert one elbow 90 degree to one elbow 45 degree" data-vi="Convert one elbow 90 degree to one elbow 45 degree">Convert one elbow 90 degree to one elbow 45 degree</h3>
-                       
                     </div>
                 </div>
-
-
-
                 <div class="gallery-item">
                     <div class="video-wrapper" style="padding-bottom: 56.25%;">
                         <iframe src="https://www.youtube.com/embed/CajF_iKtAwI" title="Tutorial 3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                     <div class="gallery-item-content">
                         <h3 class="translate" data-en="Check Clash And Solving" data-vi="Check Clash And Solvinge">Check Clash And Solving</h3>
-                       
                     </div>
                 </div>
-
-
-
                 <div class="gallery-item">
                     <div class="video-wrapper" style="padding-bottom: 56.25%;">
                         <iframe src="https://www.youtube.com/embed/1oXhVDAHU_U" title="Tutorial 3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                     <div class="gallery-item-content">
                         <h3 class="translate" data-en="RotateElements- Rotate selected elements around the selected axis" data-vi="RotateElements- Rotate selected elements around the selected axis">RotateElements- Rotate selected elements around the selected axis</h3>
-                       
                     </div>
                 </div>
-
-
-
                 <div class="gallery-item">
                     <div class="video-wrapper" style="padding-bottom: 56.25%;">
                         <iframe src="https://www.youtube.com/embed/mKzQXznkQlM" title="Tutorial 3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                     <div class="gallery-item-content">
                         <h3 class="translate" data-en="ExtraCallout and ExtraSection" data-vi="ExtraCallout and ExtraSection">ExtraCallout and ExtraSection</h3>
-                       
                     </div>
                 </div>
-
-
-
                 <div class="gallery-item">
                     <div class="video-wrapper" style="padding-bottom: 56.25%;">
                         <iframe src="https://www.youtube.com/embed/2iKeqVSqcXM" title="Tutorial 3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                     <div class="gallery-item-content">
                         <h3 class="translate" data-en="Create multi sheets by select views" data-vi="Create multi sheets by select viewss">Create multi sheets by select views</h3>
-                       
                     </div>
                 </div>
-                
-
                 <div class="gallery-item">
                     <div class="video-wrapper" style="padding-bottom: 56.25%;">
                         <iframe src="https://www.youtube.com/embed/U1Zl4_RdPmA" title="Tutorial 3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                     <div class="gallery-item-content">
                         <h3 class="translate" data-en="Create Sheet with active view" data-vi="Create Sheet with active view">Create Sheet with active view</h3>
-                       
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
     <section id="download" class="download-section">
         <div class="container">
             <h2 class="translate" data-en="Download BIM9_Connect" data-vi="Tải BIM9_Connect">Download BIM9_Connect</h2>
             <p class="translate" data-en="Get the latest version and start optimizing your piping projects today!" data-vi="Tải phiên bản mới nhất và bắt đầu tối ưu hóa dự án đường ống của bạn ngay hôm nay!">Get the latest version and start optimizing your piping projects today!</p>
             <a href="https://github.com/bim9solution/BIM9_Connect_Purchase/releases/download/BIM9_Connect/BIM9_Connect_Setup.msi" class="download-button" download>
                 <span class="download-icon">⬇️</span>
-                <span class="translate" data-en="Download v2.1.1" data-vi="Tải xuống v1.5.2">Download v2.1.1</span>
+                <span class="translate" data-en="Download v2.1.3" data-vi="Tải xuống v1.5.2">Download v2.1.3</span>
             </a>
             <p style="margin-top: 1rem; opacity: 0.8; font-size: 0.9rem;" class="translate" data-en="Windows 10/11 • 64-bit" data-vi="Windows 10/11 • 64-bit">Windows 10/11 • 64-bit</p>
         </div>
     </section>
-
     <section id="about" class="about">
         <div class="container">
             <h2 class="section-title translate" data-en="About BIM9_Connect" data-vi="Về BIM9_Connect">About BIM9_Connect</h2>
@@ -732,7 +1162,6 @@
             </p>
         </div>
     </section>
-
     <section id="contact">
         <div class="container">
             <h2 class="section-title translate" data-en="Contact Us" data-vi="Liên Hệ Với Chúng Tôi">Contact Us</h2>
@@ -757,7 +1186,6 @@
             </form>
         </div>
     </section>
-
     <footer>
         <div class="stats-bar">
             <div class="stat-item">
@@ -772,15 +1200,12 @@
         <p style="margin-top: 1rem;">&copy; 2024 BIM9_Connect. All rights reserved.</p>
         <p>Email: contact@bim9connect.com
     </footer>
-
     <script>
         let currentLang = 'en';
-
         // Counter API Configuration
         const NAMESPACE = 'bim9connect';
         const PAGE_VISITS_KEY = 'page-visits';
         const DOWNLOADS_KEY = 'downloads';
-
         // Initialize counters on page load
         window.addEventListener('load', function() {
             // Increment page visit counter
@@ -793,7 +1218,6 @@
                     document.getElementById('pageVisits').textContent = '--';
                     console.error('Error tracking page visits:', err);
                 });
-
             // Get current download count
             fetch(`https://api.countapi.xyz/get/${NAMESPACE}/${DOWNLOADS_KEY}`)
                 .then(res => res.json())
@@ -805,7 +1229,6 @@
                     console.error('Error getting download count:', err);
                 });
         });
-
         // Track download button clicks
         function trackDownload() {
             fetch(`https://api.countapi.xyz/hit/${NAMESPACE}/${DOWNLOADS_KEY}`)
@@ -816,7 +1239,6 @@
                 .catch(err => {
                     console.error('Error tracking download:', err);
                 });
-            
             // Also track with Google Analytics if configured
             if (typeof gtag !== 'undefined') {
                 gtag('event', 'download', {
@@ -826,11 +1248,9 @@
                 });
             }
         }
-
         function toggleLanguage(event) {
             event.preventDefault();
             currentLang = currentLang === 'en' ? 'vi' : 'en';
-            
             document.querySelectorAll('.translate').forEach(element => {
                 const text = element.getAttribute('data-' + currentLang);
                 if (text) {
@@ -841,26 +1261,22 @@
                     }
                 }
             });
-
             document.querySelectorAll('.nav-link').forEach(link => {
                 const text = link.getAttribute('data-' + currentLang);
                 if (text) {
                     link.textContent = text;
                 }
             });
-
             event.target.textContent = currentLang === 'en' ? '🌐 VI' : '🌐 EN';
         }
-
         function handleSubmit(event) {
             event.preventDefault();
-            const message = currentLang === 'en' 
+            const message = currentLang === 'en'
                 ? 'Thank you for contacting us! We will respond as soon as possible.'
                 : 'Cảm ơn bạn đã liên hệ! Chúng tôi sẽ phản hồi trong thời gian sớm nhất.';
             alert(message);
             event.target.reset();
         }
-
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 if (!this.classList.contains('lang-switcher') && !this.hasAttribute('download')) {

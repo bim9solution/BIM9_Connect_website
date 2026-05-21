@@ -1,10 +1,27 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BIM9PIPES - Phần Mềm Tính Toán Đường Ống</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>BIM9_Connect - Smart Piping Solutions</title>
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YV2KRNF49S"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-YV2KRNF49S');
+        
+        // Track download button clicks
+        function trackDownload() {
+            gtag('event', 'download', {
+                'event_category': 'Downloads',
+                'event_label': 'BIM9_Connect_Setup.msi',
+                'value': 1
+            });
+        }
+    </script>
     <style>
         * {
             margin: 0;
@@ -13,18 +30,11 @@
         }
 
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: #333;
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Header Styles */
         header {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
@@ -36,10 +46,13 @@
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
 
-        .header-content {
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 0 2rem;
         }
 
         .logo {
@@ -47,195 +60,240 @@
             font-weight: bold;
         }
 
-        nav ul {
-            list-style: none;
+        .nav-links {
             display: flex;
             gap: 2rem;
+            list-style: none;
+            align-items: center;
         }
 
-        nav a {
+        .nav-links a {
             color: white;
             text-decoration: none;
             transition: opacity 0.3s;
         }
 
-        nav a:hover {
+        .nav-links a:hover {
             opacity: 0.8;
         }
 
-        /* Hero Section */
-        .hero {
-            background: url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80') no-repeat center center;
-            background-size: cover;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            text-align: center;
-            color: white;
-            margin-top: 70px;
-        }
 
-        .hero-content {
-            background: rgba(0,0,0,0.5);
-            padding: 3rem;
-            border-radius: 10px;
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 150px 2rem 100px;
+            text-align: center;
         }
 
         .hero h1 {
             font-size: 3rem;
             margin-bottom: 1rem;
+            animation: fadeInUp 1s;
         }
 
         .hero p {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             margin-bottom: 2rem;
+            animation: fadeInUp 1s 0.2s backwards;
         }
 
-        .btn {
-            display: inline-block;
-            background: #667eea;
-            color: white;
-            padding: 12px 30px;
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 1s 0.4s backwards;
+        }
+
+        .cta-button {
+            background: white;
+            color: #667eea;
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
             text-decoration: none;
-            border-radius: 5px;
-            transition: background 0.3s;
+            display: inline-block;
+            font-weight: bold;
         }
 
-        .btn:hover {
-            background: #5a6fd8;
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
         }
 
-        /* Features Section */
-        .features {
-            padding: 5rem 0;
-            background: #f4f4f4;
+        .cta-button.download {
+            background: #28a745;
+            color: white;
+        }
+
+        .cta-button.download:hover {
+            background: #218838;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
         }
 
         .section-title {
             text-align: center;
-            margin-bottom: 3rem;
             font-size: 2.5rem;
-            color: #333;
+            margin-bottom: 3rem;
+            color: #667eea;
         }
 
-        .features-grid {
+        .features {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
+            margin-top: 3rem;
         }
 
         .feature-card {
             background: white;
             padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            text-align: center;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
         }
 
-        .feature-card i {
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .feature-icon {
             font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
             color: #667eea;
             margin-bottom: 1rem;
         }
 
-        /* Gallery Section */
+        .about {
+            background: #f8f9fa;
+        }
+
         .gallery {
-            padding: 5rem 0;
+            background: white;
         }
 
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
         }
 
         .gallery-item {
-            border-radius: 10px;
+            border-radius: 15px;
             overflow: hidden;
-            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
         }
 
         .gallery-item img {
             width: 100%;
-            height: 200px;
+            height: 250px;
             object-fit: cover;
-            transition: transform 0.3s;
+            display: block;
         }
 
-        .gallery-item img:hover {
-            transform: scale(1.1);
+        .gallery-item-content {
+            padding: 1rem;
+            background: white;
         }
 
-        /* Videos Section */
-        .videos {
-            padding: 5rem 0;
-            background: #f4f4f4;
+        .gallery-item-content h3 {
+            color: #667eea;
+            margin-bottom: 0.5rem;
+        }
+
+        .video-section {
+            background: #f8f9fa;
+        }
+
+        .video-container {
+            max-width: 900px;
+            margin: 0 auto;
+            margin-top: 3rem;
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
         }
 
         .video-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
+            margin-top: 3rem;
         }
 
-        .video-item {
-            background: white;
-            padding: 1rem;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-
-        .video-item iframe {
-            width: 100%;
-            height: 200px;
-            border-radius: 10px;
-        }
-
-        /* Download Section */
-        .download {
-            padding: 5rem 0;
-            text-align: center;
+        .download-section {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
+            text-align: center;
+            padding: 4rem 2rem;
         }
 
-        .download-btn {
-            font-size: 1.5rem;
-            padding: 15px 40px;
-            background: #fff;
-            color: #667eea;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: transform 0.3s;
-        }
-
-        .download-btn:hover {
-            transform: translateY(-5px);
-        }
-
-        /* About Section */
-        .about {
-            padding: 5rem 0;
-        }
-
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
-        }
-
-        .about-text h3 {
-            font-size: 2rem;
+        .download-section h2 {
+            font-size: 2.5rem;
             margin-bottom: 1rem;
-            color: #333;
         }
 
-        /* Contact Section */
-        .contact {
-            padding: 5rem 0;
-            background: #f4f4f4;
+        .download-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .download-button {
+            background: white;
+            color: #667eea;
+            padding: 1.5rem 3rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.3rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .download-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+
+        .download-icon {
+            font-size: 1.5rem;
         }
 
         .contact-form {
@@ -243,333 +301,575 @@
             margin: 0 auto;
             background: white;
             padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
         }
 
         .form-group {
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #667eea;
+            font-weight: bold;
         }
 
         .form-group input,
         .form-group textarea {
             width: 100%;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
+            padding: 0.8rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
         }
 
-        /* Footer */
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            width: 100%;
+            transition: transform 0.3s;
+        }
+
+        .submit-btn:hover {
+            transform: scale(1.05);
+        }
+
         footer {
-            background: #333;
+            background: #2c3e50;
             color: white;
-            padding: 3rem 0 1rem;
             text-align: center;
+            padding: 2rem;
         }
 
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .social-links a {
+        .stats-bar {
+            background: #34495e;
             color: white;
-            margin-right: 1rem;
-            font-size: 1.5rem;
+            padding: 1rem;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
         }
 
-        /* Responsive Design */
+        .stat-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin-top: 0.5rem;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hidden {
+            display: none;
+        }
+
         @media (max-width: 768px) {
-            .header-content {
-                flex-direction: column;
-                gap: 1rem;
-            }
-            
-            nav ul {
-                flex-direction: column;
-                gap: 1rem;
-                text-align: center;
-            }
-            
             .hero h1 {
                 font-size: 2rem;
             }
-            
-            .about-content {
-                grid-template-columns: 1fr;
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+            }
+
+            .nav-links a:not(.lang-switcher) {
+                display: none;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .cta-button {
+                width: 100%;
+                max-width: 300px;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
     <header>
-        <div class="container header-content">
-            <div class="logo">BIM9PIPES</div>
-            <nav>
-                <ul>
-                    <li><a href="#home">Trang Chủ</a></li>
-                    <li><a href="#features">Tính Năng</a></li>
-                    <li><a href="#gallery">Thư Viện Ảnh</a></li>
-                    <li><a href="#videos">Video Hướng Dẫn</a></li>
-                    <li><a href="#download">Tải Về</a></li>
-                    <li><a href="#contact">Liên Hệ</a></li>
-                </ul>
-            </nav>
-        </div>
+        <nav>
+            <div class="logo">BIM9_Connect</div>
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#features" class="nav-link">Features</a></li>
+                <li><a href="#gallery" class="nav-link">Gallery</a></li>
+                <li><a href="#videos" class="nav-link">Videos</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <!-- Hero Section -->
     <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>BIM9PIPES - Giải Pháp Tính Toán Đường Ống Chuyên Nghiệp</h1>
-            <p>Phần mềm mạnh mẽ giúp kỹ sư xây dựng và thiết kế hệ thống cấp thoát nước hiệu quả</p>
-            <a href="#download" class="btn">Tải Ngay</a>
+        <h1>BIM9_Connect</h1>
+        <p>Smart Piping Solutions for Modern Construction</p>
+        <div class="hero-buttons">
+            <a href="https://license.bim9pipes.com/purchase" class="cta-button">Purchase Now</a>
+            <a href="#download" class="cta-button download">Download Free Trial</a>
         </div>
     </section>
 
-    <!-- Features Section -->
-    <section id="features" class="features">
+    <section id="features">
         <div class="container">
-            <h2 class="section-title">Tính Năng Nổi Bật</h2>
-            <div class="features-grid">
+            <h2 class="section-title translate">Key Features</h2>
+            <div class="features">
                 <div class="feature-card">
-                    <i class="fas fa-calculator"></i>
-                    <h3>Tính Toán Chính Xác</h3>
-                    <p>Giải pháp tính toán thủy lực chính xác cho các hệ thống đường ống</p>
+                    <div class="feature-icon">🔧</div>
+                    <h3>Precision Design</h3>
+                    <p>Utilize BIM technology for highly accurate piping system design, optimizing space and costs.</p>
                 </div>
                 <div class="feature-card">
-                    <i class="fas fa-drafting-compass"></i>
-                    <h3>Thiết Kế Thông Minh</h3>
-                    <p>Công cụ thiết kế hệ thống cấp thoát nước chuyên nghiệp</p>
+                    <div class="feature-icon">📊</div>
+                    <h3>Smart Management</h3>
+                    <p>Monitor and manage entire piping systems with digital data, enabling efficient maintenance and operation.</p>
                 </div>
                 <div class="feature-card">
-                    <i class="fas fa-chart-line"></i>
-                    <h3>Phân Tích Hiệu Quả</h3>
-                    <p>Phân tích lưu lượng, áp suất và hiệu suất hệ thống</p>
+                    <div class="feature-icon">⚡</div>
+                    <h3>Rapid Installation</h3>
+                    <p>Reduce construction time with optimized design solutions and advanced technology support.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>Safety Assured</h3>
+                    <p>Comply with international safety standards, ensuring stable and sustainable system operation.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💰</div>
+                    <h3>Cost Savings</h3>
+                    <p>Minimize material waste and time, delivering optimal economic efficiency for projects.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌍</div>
+                    <h3>Eco-Friendly</h3>
+                    <p>Green solutions that protect the environment and promote sustainable development for the future.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Gallery Section -->
     <section id="gallery" class="gallery">
         <div class="container">
-            <h2 class="section-title">Thư Viện Ảnh</h2>
+            <h2 class="section-title translate">Project Gallery</h2>
             <div class="gallery-grid">
                 <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Hệ thống ống nước công nghiệp">
+                    <img src="https://raw.githubusercontent.com/bim9solution/bim9pipes_website/main/WhatsApp%20Image%202026-01-06%20at%2010.54.31%20AM.jpeg" alt="BIM Piping Design">
+                    <div class="gallery-item-content">
+                        <h3>3D Piping Model</h3>
+                        <p>Advanced 3D modeling for complex piping systems</p>
+                    </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Thiết kế ống dẫn">
+                    <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=600&h=400&fit=crop" alt="Construction Site">
+                    <div class="gallery-item-content">
+                        <h3>On-Site Installation</h3>
+                        <p>Professional installation team in action</p>
+                    </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1599325589210-4c0b0c0d2b7f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Bản vẽ kỹ thuật">
+                    <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=600&h=400&fit=crop" alt="Engineering Team">
+                    <div class="gallery-item-content">
+                        <h3>Expert Engineering</h3>
+                        <p>Experienced engineers delivering quality solutions</p>
+                    </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Hệ thống cấp nước">
+                    <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=600&h=400&fit=crop" alt="Modern Building">
+                    <div class="gallery-item-content">
+                        <h3>Modern Projects</h3>
+                        <p>Cutting-edge solutions for contemporary buildings</p>
+                    </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Hệ thống thoát nước">
+                    <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=600&h=400&fit=crop" alt="Industrial Piping">
+                    <div class="gallery-item-content">
+                        <h3>Industrial Solutions</h3>
+                        <p>Heavy-duty piping for industrial applications</p>
+                    </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Thiết bị đo lường">
+                    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&h=400&fit=crop" alt="Smart Building">
+                    <div class="gallery-item-content">
+                        <h3>Smart Buildings</h3>
+                        <p>Integrated systems for intelligent buildings</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Videos Section -->
-    <section id="videos" class="videos">
+    <section id="videos" class="video-section">
         <div class="container">
-            <h2 class="section-title">Video Hướng Dẫn</h2>
+            <h2 class="section-title translate">Video Tutorials & Demos</h2>
+            
+            <div class="video-container">
+                <h3 style="text-align: center; margin-bottom: 1.5rem; color: #667eea;">Featured Video</h3>
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/6sB0jzgIq5Y" title="BIM9_Connect Introduction" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+
             <div class="video-grid">
-                <div class="video-item">
-                    <iframe src="https://www.youtube.com/embed/5yLw0JqXKZ0" frameborder="0" allowfullscreen></iframe>
-                    <h3>Hướng Dẫn Cơ Bản</h3>
-                    <p>Cách sử dụng phần mềm BIM9PIPES cơ bản</p>
+
+
+                <div class="gallery-item">
+                    <div class="video-wrapper" style="padding-bottom: 56.25%;">
+                        <iframe src="https://www.youtube.com/embed/H9-jNe9hKuE" title="Tutorial 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="gallery-item-content">
+                        <h3>ExportCAD - Export multi sheets into one CAD file</h3>
+                        
+                    </div>
                 </div>
-                <div class="video-item">
-                    <iframe src="https://www.youtube.com/embed/YF2AhueP7tY" frameborder="0" allowfullscreen></iframe>
-                    <h3>Tính Năng Nâng Cao</h3>
-                    <p>Các tính năng nâng cao trong phần mềm</p>
+
+
+                <div class="gallery-item">
+                    <div class="video-wrapper" style="padding-bottom: 56.25%;">
+                        <iframe src="https://www.youtube.com/embed/j3xr4g16mQ4" title="Tutorial 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="gallery-item-content">
+                        <h3>Search Elements</h3>
+                        
+                    </div>
                 </div>
-                <div class="video-item">
-                    <iframe src="https://www.youtube.com/embed/vQgR7M0Uc8E" frameborder="0" allowfullscreen></iframe>
-                    <h3>Thiết Kế Hệ Thống</h3>
-                    <p>Hướng dẫn thiết kế hệ thống cấp thoát nước</p>
+
+                
+
+                
+                <div class="gallery-item">
+                    <div class="video-wrapper" style="padding-bottom: 56.25%;">
+                        <iframe src="https://www.youtube.com/embed/OgTnvDWnid0" title="Tutorial 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="gallery-item-content">
+                        <h3>ParaConnect - Connect two selected parallel pipes</h3>
+                        
+                    </div>
                 </div>
-                <div class="video-item">
-                    <iframe src="https://www.youtube.com/embed/MZlV7zQ4kUk" frameborder="0" allowfullscreen></iframe>
-                    <h3>Phân Tích Thủy Lực</h3>
-                    <p>Cách thực hiện phân tích thủy lực</p>
+
+
+                <div class="gallery-item">
+                    <div class="video-wrapper" style="padding-bottom: 56.25%;">
+                        <iframe src="https://www.youtube.com/embed/0ZvDSGyE5Sw" title="Tutorial 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="gallery-item-content">
+                        <h3>Delete and reconnect pipe with fittings</h3>
+                        
+                    </div>
                 </div>
-                <div class="video-item">
-                    <iframe src="https://www.youtube.com/embed/rL123456789" frameborder="0" allowfullscreen></iframe>
-                    <h3>Tính Toán Lưu Lượng</h3>
-                    <p>Phương pháp tính toán lưu lượng ống</p>
+
+                
+                
+                <div class="gallery-item">
+                    <div class="video-wrapper" style="padding-bottom: 56.25%;">
+                        <iframe src="https://www.youtube.com/embed/NrFmdxjenMI" title="Tutorial 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="gallery-item-content">
+                        <h3>PerpenConnect - Connect two selected perpendicular pipes with big difference elevation</h3>
+                        
+                    </div>
                 </div>
-                <div class="video-item">
-                    <iframe src="https://www.youtube.com/embed/sM123456789" frameborder="0" allowfullscreen></iframe>
-                    <h3>Cài Đặt Và Cấu Hình</h3>
-                    <p>Hướng dẫn cài đặt phần mềm</p>
+                
+                <div class="gallery-item">
+                    <div class="video-wrapper" style="padding-bottom: 56.25%;">
+                        <iframe src="https://www.youtube.com/embed/uzHbc8VpVsM" title="Tutorial 3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="gallery-item-content">
+                        <h3>Connect selected pipes by elbows at the 300mm distance</h3>
+                       
+                    </div>
                 </div>
-                <div class="video-item">
-                    <iframe src="https://www.youtube.com/embed/tM123456789" frameborder="0" allowfullscreen></iframe>
-                    <h3>Cập Nhật Tính Năng</h3>
-                    <p>Những cập nhật mới nhất của phần mềm</p>
+
+
+                
+                <div class="gallery-item">
+                    <div class="video-wrapper" style="padding-bottom: 56.25%;">
+                        <iframe src="https://www.youtube.com/embed/ovFT0Pg-AO0" title="Tutorial 3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="gallery-item-content">
+                        <h3>Convert one elbow 90 degree to one elbow 45 degree</h3>
+                       
+                    </div>
                 </div>
-                <div class="video-item">
-                    <iframe src="https://www.youtube.com/embed/uM123456789" frameborder="0" allowfullscreen></iframe>
-                    <h3>Quản Lý Dự Án</h3>
-                    <p>Cách quản lý dự án trong phần mềm</p>
+
+
+
+                <div class="gallery-item">
+                    <div class="video-wrapper" style="padding-bottom: 56.25%;">
+                        <iframe src="https://www.youtube.com/embed/CajF_iKtAwI" title="Tutorial 3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="gallery-item-content">
+                        <h3>Check Clash And Solving</h3>
+                       
+                    </div>
                 </div>
-                <div class="video-item">
-                    <iframe src="https://www.youtube.com/embed/vM123456789" frameborder="0" allowfullscreen></iframe>
-                    <h3>Xuất Báo Cáo</h3>
-                    <p>Hướng dẫn xuất báo cáo chuyên nghiệp</p>
+
+
+
+                <div class="gallery-item">
+                    <div class="video-wrapper" style="padding-bottom: 56.25%;">
+                        <iframe src="https://www.youtube.com/embed/1oXhVDAHU_U" title="Tutorial 3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="gallery-item-content">
+                        <h3>RotateElements- Rotate selected elements around the selected axis</h3>
+                       
+                    </div>
                 </div>
-                <div class="video-item">
-                    <iframe src="https://www.youtube.com/embed/wM123456789" frameborder="0" allowfullscreen></iframe>
-                    <h3>Kết Nối BIM</h3>
-                    <p>Tích hợp với các phần mềm BIM khác</p>
+
+
+
+                <div class="gallery-item">
+                    <div class="video-wrapper" style="padding-bottom: 56.25%;">
+                        <iframe src="https://www.youtube.com/embed/mKzQXznkQlM" title="Tutorial 3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="gallery-item-content">
+                        <h3>ExtraCallout and ExtraSection</h3>
+                       
+                    </div>
                 </div>
-                <div class="video-item">
-                    <iframe src="https://www.youtube.com/embed/xM123456789" frameborder="0" allowfullscreen></iframe>
-                    <h3>Bảo Trì Hệ Thống</h3>
-                    <p>Quản lý bảo trì và kiểm tra hệ thống</p>
+
+
+
+                <div class="gallery-item">
+                    <div class="video-wrapper" style="padding-bottom: 56.25%;">
+                        <iframe src="https://www.youtube.com/embed/2iKeqVSqcXM" title="Tutorial 3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="gallery-item-content">
+                        <h3>Create multi sheets by select views</h3>
+                       
+                    </div>
                 </div>
-                <div class="video-item">
-                    <iframe src="https://www.youtube.com/embed/yM123456789" frameborder="0" allowfullscreen></iframe>
-                    <h3>Phân Tích Áp Suất</h3>
-                    <p>Phân tích áp suất trong hệ thống ống</p>
-                </div>
-                <div class="video-item">
-                    <iframe src="https://www.youtube.com/embed/zM123456789" frameborder="0" allowfullscreen></iframe>
-                    <h3>Tự Động Hóa Thiết Kế</h3>
-                    <p>Công cụ tự động hóa trong thiết kế ống</p>
+                
+
+                <div class="gallery-item">
+                    <div class="video-wrapper" style="padding-bottom: 56.25%;">
+                        <iframe src="https://www.youtube.com/embed/U1Zl4_RdPmA" title="Tutorial 3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="gallery-item-content">
+                        <h3>Create Sheet with active view</h3>
+                       
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Download Section -->
-    <section id="download" class="download">
+    <section id="download" class="download-section">
         <div class="container">
-            <h2 class="section-title">Tải Phiên Bản Mới Nhất</h2>
-            <p style="font-size: 1.2rem; margin-bottom: 2rem;">Phiên bản hiện tại: v2.1.3</p>
-            <button class="download-btn" onclick="window.location.href='https://bim9pipes.com/download'">
-                <i class="fas fa-download"></i> Download v2.1.3
-            </button>
+            <h2>Download BIM9_Connect</h2>
+            <p>Get the latest version and start optimizing your piping projects today!</p>
+            <a href="https://github.com/bim9solution/BIM9_Connect_Purchase/releases/download/BIM9_Connect/BIM9_Connect_Setup.msi" class="download-button" download>
+                <span class="download-icon">⬇️</span>
+                <span>Download v2.2.3</span>
+            </a>
+            <p style="margin-top: 1rem; opacity: 0.8; font-size: 0.9rem;">Windows 10/11 • 64-bit</p>
         </div>
     </section>
 
-    <!-- About Section -->
     <section id="about" class="about">
         <div class="container">
-            <div class="about-content">
-                <div class="about-text">
-                    <h3>Về BIM9PIPES</h3>
-                    <p>BIM9PIPES là phần mềm chuyên nghiệp được phát triển dành riêng cho các kỹ sư xây dựng, kỹ thuật viên và nhà thiết kế hệ thống cấp thoát nước. Với hơn 10 năm kinh nghiệm trong lĩnh vực phần mềm kỹ thuật, chúng tôi cam kết mang đến giải pháp tối ưu cho mọi dự án.</p>
-                    <p>Phần mềm hỗ trợ đa nền tảng và tích hợp công nghệ BIM tiên tiến, giúp tăng hiệu suất làm việc và độ chính xác trong thiết kế.</p>
-                </div>
-                <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Văn phòng công ty" style="width: 100%; border-radius: 10px;">
-                </div>
-            </div>
+            <h2 class="section-title translate">About BIM9_Connect</h2>
+            <p style="text-align: center; font-size: 1.2rem; max-width: 800px; margin: 0 auto;">
+                BIM9_Connect is a pioneer in applying BIM (Building Information Modeling) technology to the design and construction of piping systems. With our experienced engineering team and modern technology, we are committed to delivering the most optimal solutions for every project.
+            </p>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
+    <section id="contact">
         <div class="container">
-            <h2 class="section-title">Liên Hệ Với Chúng Tôi</h2>
-            <div class="contact-form">
-                <form id="contactForm">
-                    <div class="form-group">
-                        <input type="text" placeholder="Họ và tên" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" placeholder="Email" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="tel" placeholder="Số điện thoại">
-                    </div>
-                    <div class="form-group">
-                        <textarea placeholder="Nội dung liên hệ" rows="5" required></textarea>
-                    </div>
-                    <button type="submit" class="btn">Gửi Liên Hệ</button>
-                </form>
-            </div>
+            <h2 class="section-title translate">Contact Us</h2>
+            <form class="contact-form" onsubmit="handleSubmit(event)">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn translate" id="submit-btn">Send Message</button>
+                <p id="form-status" style="margin-top:12px;text-align:center;font-weight:600;display:none;"></p>
+            </form>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h4>BIM9PIPES</h4>
-                    <p>Phần mềm tính toán đường ống chuyên nghiệp</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Liên Kết Nhanh</h4>
-                    <ul style="list-style: none;">
-                        <li><a href="#features" style="color: #ccc;">Tính Năng</a></li>
-                        <li><a href="#download" style="color: #ccc;">Tải Về</a></li>
-                        <li><a href="#contact" style="color: #ccc;">Liên Hệ</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Theo Dõi Chúng Tôi</h4>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                    </div>
-                </div>
+        <div class="stats-bar">
+            <div class="stat-item">
+                <div class="stat-number" id="pageVisits">Loading...</div>
+                <div class="stat-label translate">Page Visits</div>
             </div>
-            <hr style="border: 1px solid #555; margin: 2rem 0;">
-            <p>&copy; 2026 BIM9PIPES. Tất cả quyền được bảo lưu.</p>
+            <div class="stat-item">
+                <div class="stat-number" id="downloadCount">Loading...</div>
+                <div class="stat-label translate">Downloads</div>
+            </div>
         </div>
+        <p style="margin-top: 1rem;">&copy; 2024 BIM9_Connect. All rights reserved.</p>
+        <p>Email: contact@bim9connect.com
     </footer>
 
     <script>
-        // Smooth scrolling for navigation links
+        // Counter API Configuration
+        const NAMESPACE = 'bim9connect';
+        const PAGE_VISITS_KEY = 'page-visits';
+        const DOWNLOADS_KEY = 'downloads';
+
+        // Initialize counters on page load
+        window.addEventListener('load', function() {
+            // Increment page visit counter
+            fetch(`https://api.countapi.xyz/hit/${NAMESPACE}/${PAGE_VISITS_KEY}`)
+                .then(res => res.json())
+                .then(data => {
+                    document.getElementById('pageVisits').textContent = data.value.toLocaleString();
+                })
+                .catch(err => {
+                    document.getElementById('pageVisits').textContent = '--';
+                    console.error('Error tracking page visits:', err);
+                });
+
+            // Get current download count
+            fetch(`https://api.countapi.xyz/get/${NAMESPACE}/${DOWNLOADS_KEY}`)
+                .then(res => res.json())
+                .then(data => {
+                    document.getElementById('downloadCount').textContent = data.value.toLocaleString();
+                })
+                .catch(err => {
+                    document.getElementById('downloadCount').textContent = '--';
+                    console.error('Error getting download count:', err);
+                });
+        });
+
+        // Track download button clicks
+        function trackDownload() {
+            fetch(`https://api.countapi.xyz/hit/${NAMESPACE}/${DOWNLOADS_KEY}`)
+                .then(res => res.json())
+                .then(data => {
+                    document.getElementById('downloadCount').textContent = data.value.toLocaleString();
+                })
+                .catch(err => {
+                    console.error('Error tracking download:', err);
+                });
+            
+            // Also track with Google Analytics if configured
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'download', {
+                    'event_category': 'Downloads',
+                    'event_label': 'BIM9_Connect_Setup.msi',
+                    'value': 1
+                });
+            }
+        }
+
+        }
+
+        async function handleSubmit(event) {
+            event.preventDefault();
+            const form = event.target;
+            const btn = document.getElementById('submit-btn');
+            const status = document.getElementById('form-status');
+
+            btn.disabled = true;
+            btn.textContent = 'Sending…';
+            status.style.display = 'none';
+
+            const payload = {
+                name: form.name.value,
+                email: form.email.value,
+                phone: form.phone.value,
+                message: form.message.value,
+            };
+
+            try {
+                const res = await fetch('/api/contact', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload),
+                });
+
+                if (res.ok) {
+                    status.style.color = '#4CAF50';
+                    status.textContent = 'Thank you! We will respond as soon as possible.';
+                    form.reset();
+                } else {
+                    status.style.color = '#e53935';
+                    status.textContent = 'Failed to send. Please try again or email us directly.';
+                }
+            } catch {
+                status.style.color = '#e53935';
+                status.textContent = 'Network error. Please try again.';
+            } finally {
+                status.style.display = 'block';
+                btn.disabled = false;
+                btn.textContent = 'Send Message';
+            }
+        }
+
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-
-        // Form submission handling
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Cảm ơn bạn đã liên hệ! Chúng tôi sẽ phản hồi sớm nhất có thể.');
-            this.reset();
-        });
-
-        // Simple animation for feature cards on scroll
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = 1;
-                    entry.target.style.transform = 'translateY(0)';
+                if (!this.classList.contains('lang-switcher') && !this.hasAttribute('download')) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
                 }
             });
-        }, { threshold: 0.1 });
-
-        document.querySelectorAll('.feature-card').forEach(card => {
-            card.style.opacity = 0;
-            card.style.transform = 'translateY(20px)';
-            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(card);
         });
     </script>
 </body>

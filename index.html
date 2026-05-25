@@ -821,7 +821,7 @@
             const status = document.getElementById('form-status');
 
             btn.disabled = true;
-            btn.textContent = 'Sending…';
+            btn.textContent = 'Sending...';
             status.style.display = 'none';
 
             const payload = {
@@ -830,6 +830,12 @@
                 phone: form.phone.value,
                 message: form.message.value,
             };
+
+            const subject = encodeURIComponent(`BIM9_Connect contact from ${payload.name}`);
+            const body = encodeURIComponent(
+                `Name: ${payload.name}\nEmail: ${payload.email}\nPhone: ${payload.phone}\n\nMessage:\n${payload.message}`
+            );
+            const mailtoUrl = `mailto:bim9solution@gmail.com?subject=${subject}&body=${body}`;
 
             try {
                 const res = await fetch('/api/contact', {
@@ -843,12 +849,14 @@
                     status.textContent = 'Thank you! We will respond as soon as possible.';
                     form.reset();
                 } else {
-                    status.style.color = '#e53935';
-                    status.textContent = 'Failed to send. Please try again or email us directly.';
+                    window.location.href = mailtoUrl;
+                    status.style.color = '#667eea';
+                    status.textContent = 'Opening your email app to send the message.';
                 }
             } catch {
-                status.style.color = '#e53935';
-                status.textContent = 'Network error. Please try again.';
+                window.location.href = mailtoUrl;
+                status.style.color = '#667eea';
+                status.textContent = 'Opening your email app to send the message.';
             } finally {
                 status.style.display = 'block';
                 btn.disabled = false;

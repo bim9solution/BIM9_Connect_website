@@ -716,6 +716,11 @@
         <div class="container">
             <h2 class="section-title">Contact Us</h2>
             <form class="contact-form" onsubmit="handleSubmit(event)">
+                <!-- Honeypot: hidden anti-spam field. Real users never see or fill this. -->
+                <div class="honeypot" style="position:absolute; left:-9999px;" aria-hidden="true">
+                    <label>Leave this field empty</label>
+                    <input type="text" name="_honey" id="honey" tabindex="-1" autocomplete="off">
+                </div>
                 <div class="form-group">
                     <label for="name">Full Name</label>
                     <input type="text" id="name" name="name" required>
@@ -818,11 +823,23 @@
             btn.textContent = 'Sending...';
             status.style.display = 'none';
 
+            // Honeypot spam check: if a bot filled the hidden field, fake a success
+            // but never actually send the message.
+            if (document.getElementById('honey').value) {
+                status.style.color = '#4CAF50';
+                status.textContent = 'Thank you! We will respond as soon as possible.';
+                status.style.display = 'block';
+                btn.disabled = false;
+                btn.textContent = 'Send Message';
+                return;
+            }
+
             const payload = {
                 name: form.name.value,
                 email: form.email.value,
                 phone: form.phone.value,
                 message: form.message.value,
+                _subject: `BIM9_Connect contact from ${form.name.value}`,
             };
 
             const subject = encodeURIComponent(`BIM9_Connect contact from ${payload.name}`);
@@ -832,9 +849,12 @@
             const mailtoUrl = `mailto:bim9solution@gmail.com?subject=${subject}&body=${body}`;
 
             try {
-                const res = await fetch('/api/contact', {
+                const res = await fetch('https://formsubmit.co/ajax/bim9solution@gmail.com', {
                     method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
                     body: JSON.stringify(payload),
                 });
 
